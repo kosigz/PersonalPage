@@ -1,0 +1,24 @@
+.fa:hover 
+{
+   /* color: #CC6600; */
+   color: white;
+}
+
+.masthead-brand, .masthead-nav
+{
+    color: #66FF66;
+    font-family: 'Helvetica';
+    font-weight: 1;
+}
+
+.cover-heading, .lead
+{
+	font-family: 'Helvetica';
+}
+
+#button {
+	opacity: 0.1;
+	color: #66FF66;
+    font-family: 'Helvetica';
+    font-weight: 1;
+}
