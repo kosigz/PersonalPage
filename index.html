@@ -47,28 +47,44 @@
               <h3 class="masthead-brand">@kosigz</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="">home</a></li>
-                  <li><a href="about/index.html">about</a></li>
+                  <li id = "homeNav"><a href="#/home">home</a></li>
+                  <li id = "aboutNav"><a href="#/about">about</a></li>
                   <li><a href="http://kosigz.tumblr.com">blog</a></li>
                 </ul>
               </nav>
             </div>
           </div>
-
-          <div class="inner cover">
-            <img class = "avatar" id = "img1" src = "img/walking.png" height = 150 width = 150></img>
-            &nbsp;&nbsp;
-            <img class = "avatar" id = "img3" src = "img/headshot.png" height = 150 width = 150></img>
-            &nbsp;&nbsp;
-            <img class = "avatar" id = "img2" src = "img/working.png" height = 150 width = 150></img>
-            <h1 class="cover-heading">Hi, my name is <span style = "color: #66FF66;">Konstantin</span>.</h1>
-            <p class="lead">
-            CS Undergraduate @ <span style = "color: #66FF66;">Northeastern</span><br>
-            Software Developer @ <span style = "color: #66FF66;">Amazon</span><br>
-            Resident @ <span style = "color: #66FF66;">Bay Area</span>, <span style = "color: #66FF66;">Boston</span> <br>
-            </p>
-            <p class="lead">
-             <!-- <a href="#" class="btn btn-lg btn-default">Learn more</a> -->
+          <div id = "home">
+            <div class="inner cover">
+              <img class = "avatar" id = "img1" src = "img/walking.png" height = 150 width = 150></img>
+              &nbsp;&nbsp;
+              <img class = "avatar" id = "img3" src = "img/headshot.png" height = 150 width = 150></img>
+              &nbsp;&nbsp;
+              <img class = "avatar" id = "img2" src = "img/working.png" height = 150 width = 150></img>
+              <h1 class="cover-heading">Hi, my name is <span style = "color: #66FF66;">Konstantin</span>.</h1>
+              <p class="lead">
+              CS Undergraduate @ <span style = "color: #66FF66;">Northeastern</span><br>
+              Software Developer @ <span style = "color: #66FF66;">Amazon</span><br>
+              Resident @ <span style = "color: #66FF66;">Bay Area</span>, <span style = "color: #66FF66;">Boston</span> <br>
+              </p>
+              <p class="lead">
+               <!-- <a href="#" class="btn btn-lg btn-default">Learn more</a> -->
+              </p>
+            </div>
+          </div>
+          <div id = "aboutMe">
+            <span style ="text-align:center"><h3>Konstantin interviews Kosi about Konstantin.</h3></span><br>
+            <p>
+            <i>"What do you enjoy most?"</i><br>
+            Backpacking in the mountains is one of my favorite activities because it is a time to slow down and appreciate the little things that get overlooked sometimes -- like the stars, or just being with friends.<br><br>
+            <i>"What do you admire in others?"</i><br>
+            I admire disciplined people. It is hard to accomplish much without setting and following thought out goals. Good things take time and conscious, constructive effort. Pushing myself is important to me. I also admire when people are open and honest.<br><br>
+            <i>"What do you aspire to do?"</i><br>
+            I think it is important to give back whenever possible. You can have a bigger impact working for others than you can doing things for yourself. To that end, I want to help others achieve their goals by teaching, supporting, advising, and giving feedback.<br><br>
+            <i>"Why did you choose to study computer science?"</i><br>
+            I always liked math. In high school, I started programming. I love programming because it tends to objective and I find objectivity pleasing. Code either runs or it doesn't. You can time it and test it and sometimes prove its correctness. But programming is also an art. Where can you cache? How do you handle the edge cases? Is your code modular? Is it elegant? Is it fast?<br><br>
+            <i>"What are you most proud of?"</i><br>
+            I have amazing friends all over the world. I am most proud of them!
             </p>
           </div>
         </div>
@@ -92,14 +108,29 @@
 
     <script>
     $(document).ready(function() {
-      $('.full-bio').hide();
-      /*$('.lead').hover(function() {
-          $('.lead').fadeIn(
-            $('.full-bio').fadeOut();
-            );
-        });
-      }*/
-    }
+      $('#aboutMe').hide();
+      $('.li homeNav').addClass('active');
+
+      $('.nav li').click(function(e) {
+        e.preventDefault();
+        var hash = e.target.hash;;
+        if (hash == "#/about") {
+          $('#home').hide();
+          $('#aboutMe').show();
+          $('.nav li').removeClass('active');
+          $('.li #aboutNav').addClass('active');
+        } else if (hash == "#/home") {
+          $('#aboutMe').hide();
+          $('#home').show();  
+          $('.nav li').removeClass('active');
+          $('.li #homeNav').addClass('active');
+        }
+        else {
+          window.location.href = "http://kosigz.tumblr.com";
+        }
+      });
+
+    });
     </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
